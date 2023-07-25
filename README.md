@@ -1,34 +1,42 @@
+# React Email
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Creating email templates is not always as easy as designing web pages. Same way we use responsive designs to match various screen sizes. In this case simply put it might look good on gmail but werid on outlook. 
 
-First, run the development server:
+A solution I found to handle creating and sending out of emails are [react email](https://react.email) and [resend](https://resend.com). React email allows us to design email templates in react and send them with resend.
+
+
+To run this project locally, first you will need to clone the application then install it.
+
+After clonning the repo run the code below to install all dependencies:
+
+```bash
+npm install
+
+```
+
+To run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+React email can spin a server so can see all our templates as we design
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+To run the react email server
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run email
 
-## Learn More
+```
 
-To learn more about Next.js, take a look at the following resources:
+By default Next js will run a server on port **3000**, but we have set a flag in our react email script to point at port **3003**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```js
+"scripts": {
+    "email": "email dev --dir src/emails/templates --port 3003"
+  }
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
